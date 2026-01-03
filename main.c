@@ -8,7 +8,7 @@ Deque* itemList = NULL;
 
 static const struct argp_option options[] = {
 	{ "directory", 'C', "DIR", OPTION_ARG_OPTIONAL, "改变至目录DIR" },
-	{ "file", 'f', "ARCHIVE", OPTION_ARG_OPTIONAL, "操作目标PAK ARCHIVE文件" },
+	{ "file", 'f', "ARCHIVE", OPTION_ARG_OPTIONAL, "操作目标ACX ARCHIVE文件" },
 	{ "create", 'c', NULL, OPTION_ARG_OPTIONAL, "创建一个新归档" },
 	{ "extract", 'x', NULL, OPTION_ARG_OPTIONAL, "从归档中解出文件" },
 	{ "list", 't', NULL, OPTION_ARG_OPTIONAL, "列出归档内容" },
