@@ -27,6 +27,19 @@ Mandatory or optional arguments to long options are also mandatory or optional
 for any corresponding short options.
 ```
 
+例子：(假设调用程序的指令是`./acx`)
+
+```
+# 在当前目录下创建a.pak，内容为./dir_a/下的所有文件、文件列表./b.txt中列文件，并显示过程。(文件包中各文件有为对其到16 Byte而补0。)
+$ ./acx -cvf./a.acx ./dir_a/*.adx --files-from=./b.txt
+
+# 解包./0.acx，并将解出的文件放到目录./0/下
+$ ./acx -xf./0.acx -C./0
+
+# 不解包，查看./pl01.pak中的各文件的序号、所在偏移、文件长
+$ ./acx --list -f./1.acx
+```
+
 ## 编译
 
 `Linux`、`Cygwin`、`MSYS2`环境下，直接`make`即可。大概吧。

@@ -18,3 +18,8 @@ endif
 
 $(BIN) : $(SRC_C) $(SRC_H)
 	$(CC) $(SRC_C) $(INCLUDE) $(LIBS) -o $(BIN)
+
+.PHONY : clean
+
+clean :
+	rm $(BIN) -v
