@@ -7,14 +7,14 @@ SRC_H=acx.h args.h common.h deque.h reader.h writer.h
 
 BIN=./acx
 
+ifeq ($(OS),Windows_NT)
+	BIN:=$(BIN).exe
+	LIBS+=-largp
+endif
+
 all : ACX
 
 ACX : $(BIN)
-
-ifeq ($(OS),Windows_NT)
-	BIN+=.exe
-	LIBS+=largp
-endif
 
 $(BIN) : $(SRC_C) $(SRC_H)
 	$(CC) $(SRC_C) $(INCLUDE) $(LIBS) -o $(BIN)
