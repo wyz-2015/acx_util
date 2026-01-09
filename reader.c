@@ -5,7 +5,7 @@ bool ACXReader_file_check2(ACXReader* restrict areader) // 检查文件
 	const ACX_Item* lastItem = areader->itemTable[areader->itemCount - 1];
 	uint32_t fileLen = ntohl(lastItem->relativeOffset) + ntohl(lastItem->fileLen), fileLen_real = get_file_len(areader->acx);
 
-	if (abs(fileLen - fileLen_real) < sizeof(uint32_t)) {
+	if (abs(fileLen - fileLen_real) < 4 * sizeof(uint32_t)) {
 		return true;
 	} else {
 		return false;
